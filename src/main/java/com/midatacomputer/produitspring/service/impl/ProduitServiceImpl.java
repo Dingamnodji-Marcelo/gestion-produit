@@ -37,8 +37,13 @@ public class ProduitServiceImpl implements ProduitService {
     }
 
     @Override
-    public int deleteProduit(int productId) {
-        return produitRepository.deleteProduitModelByProductId(productId);
+    public String deleteProduit(int productId) {
+        ProduitModel foundProduit = produitRepository.findById(productId)
+                .orElseThrow(() -> new ProduitNotFoundException("Product with ID : "+productId+" not found..."));
+
+        produitRepository.delete(foundProduit);
+
+        return "Product with ID : "+productId+ " deleted successfully...";
     }
 
     @Override

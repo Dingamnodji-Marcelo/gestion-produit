@@ -13,7 +13,7 @@ public interface ProduitService {
 
     ProduitModel createProduit(ProduitModel produit);
 
-    int deleteProduit(int productId);
+    String deleteProduit(int productId);
 
     String updateProduit(int productId, ProduitModel produit);
 }
