@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: produitspring
+  datasource:
+    url: jdbc:mysql://localhost:3307/db_exo_produit
+    username: root
+    password: password123
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    database: mysql
+
+  server:
+    port: 8080
+
+
+  # swagger-ui custom path
+springdoc:
+  swagger-ui:
+    path: /docs
